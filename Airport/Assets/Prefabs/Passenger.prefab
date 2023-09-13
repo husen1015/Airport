@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 5056640580236366834}
   - component: {fileID: 5056640580236366833}
   - component: {fileID: 383758152878937551}
+  - component: {fileID: 219786061}
+  - component: {fileID: 219786062}
+  - component: {fileID: 219786064}
   m_Layer: 0
   m_Name: Passenger
   m_TagString: Untagged
@@ -109,7 +112,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -121,3 +124,65 @@ NavMeshAgent:
   m_BaseOffset: 0.76
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &219786061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056640580236366832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812a01c525a53574e9e529f0ea03059c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: []
+  currAction: {fileID: 0}
+--- !u!114 &219786062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056640580236366832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04797f50afb5b1d4f993983df670b07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Rest
+  cost: 1
+  target: {fileID: 0}
+  targetTag: WaitingArea
+  duration: 5
+  preConditions: []
+  afterEffects:
+  - key: rested
+    value: 0
+  agent: {fileID: 383758152878937551}
+  running: 0
+--- !u!114 &219786064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056640580236366832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25df8e2f0f8926440b7b4b9659be0bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Checkin
+  cost: 1
+  target: {fileID: 0}
+  targetTag: CheckIn
+  duration: 5
+  preConditions:
+  - key: AvailableCounters
+    value: 1
+  afterEffects:
+  - key: CheckedIn
+    value: 0
+  agent: {fileID: 0}
+  running: 0

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameWorld.Instance.GetWorldStates1().SetState("AvailableCounters", 0);
+        GameWorld.Instance.GetWorldStates1().SetState("AvailableCounters", 1);
         foreach(var s in GameWorld.Instance.GetWorldStates())
         {
             Debug.Log($"state: {s.Key}");
