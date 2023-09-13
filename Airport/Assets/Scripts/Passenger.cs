@@ -8,6 +8,13 @@ public class Passenger : GameAgent
     void Start()
     {
         base.Start();
+        SubGoal goal1 = new SubGoal("rested", 3, false);
+        SubGoal goal2 = new SubGoal("CheckedIn", 4, false);
+
+        SubGoals.Add(goal1, 3);
+        SubGoals.Add(goal2, 4);
+
+
         //SubGoal goal1 = new SubGoal("checkin", 3, false);
         //SubGoal goal2 = new SubGoal("passSecurity", 3, false);
 

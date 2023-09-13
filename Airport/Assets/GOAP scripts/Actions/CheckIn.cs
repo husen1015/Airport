@@ -2,8 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GamePlanner : MonoBehaviour
+public class CheckIn : Action
 {
+    public override bool PostPrefom()
+    {
+        return true;
+    }
+
+    public override bool PrePrefom()
+    {
+        return true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
