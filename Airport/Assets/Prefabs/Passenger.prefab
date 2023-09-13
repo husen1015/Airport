@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 219786061}
   - component: {fileID: 219786062}
   - component: {fileID: 219786064}
+  - component: {fileID: 8661510032008456117}
   m_Layer: 0
   m_Name: Passenger
   m_TagString: Untagged
@@ -184,5 +185,26 @@ MonoBehaviour:
   afterEffects:
   - key: CheckedIn
     value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &8661510032008456117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056640580236366832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d56596f3ffea6c439d5935971977249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  cost: 1
+  target: {fileID: 0}
+  targetTag: SecurityArea
+  duration: 0
+  preConditions: []
+  afterEffects: []
   agent: {fileID: 0}
   running: 0

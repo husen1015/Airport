@@ -60,7 +60,7 @@ public abstract class Action : MonoBehaviour
         foreach (KeyValuePair<string, int> p in pre_conditions)
         {
             if (!conditions.ContainsKey(p.Key)) { return false; }
-            if (conditions[p.Key] <= 0) { return false; }
+            //if (conditions[p.Key] <= 0) { return false; }
 
         }
         return true;
