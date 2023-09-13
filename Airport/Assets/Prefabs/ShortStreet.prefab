@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: general_street_straight_no_sidewalk (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -111,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: general_street_straight_no_sidewalk (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -176,6 +184,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
       propertyPath: m_Name
       value: general_street_straight_no_sidewalk (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c24014bb2573314439344bb71ce5ef2e, type: 3}
       propertyPath: m_RootOrder
