@@ -152,7 +152,6 @@ public class GameAgent : MonoBehaviour
                 if(currAction.target != null)
                 {
                     currAction.running= true;
-                    Debug.Log(currAction.target.transform.position);
                     currAction.agent.SetDestination(currAction.target.transform.position);
                 }
             }
