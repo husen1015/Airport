@@ -3620,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1055099739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5504,10 +5504,10 @@ MonoBehaviour:
   duration: 5
   preConditions:
   - key: PassedSecurity
-    value: 0
+    value: 1
   afterEffects:
   - key: ReadyToBoard
-    value: 0
+    value: 1
   agent: {fileID: 0}
   running: 0
 --- !u!1001 &1522333280
@@ -7604,7 +7604,11 @@ PrefabInstance:
       objectReference: {fileID: 218072905}
     - target: {fileID: 219786064, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: duration
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 219786064, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: afterEffects.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 383758152878937551, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: m_Speed
@@ -7685,6 +7689,14 @@ PrefabInstance:
     - target: {fileID: 8661510032008456117, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: preConditions.Array.data[0].key
       value: CheckedIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661510032008456117, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: afterEffects.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661510032008456117, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: preConditions.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}

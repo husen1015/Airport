@@ -59,7 +59,7 @@ public abstract class Action : MonoBehaviour
         //make sure all required conditions are found in pre_conditions
         foreach (KeyValuePair<string, int> p in pre_conditions)
         {
-            if (!conditions.ContainsKey(p.Key)) { return false; }
+            if (!conditions.ContainsKey(p.Key) || conditions[p.Key] <= 0) { return false; }
             //if (conditions[p.Key] <= 0) { return false; }
 
         }
