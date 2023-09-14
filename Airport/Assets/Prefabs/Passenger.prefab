@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 219786062}
   - component: {fileID: 219786064}
   - component: {fileID: 8661510032008456117}
+  - component: {fileID: 1473665945}
   m_Layer: 0
   m_Name: Passenger
   m_TagString: Untagged
@@ -155,7 +156,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: WaitingArea
-  duration: 5
+  duration: 2
   preConditions: []
   afterEffects:
   - key: rested
@@ -177,14 +178,14 @@ MonoBehaviour:
   Name: Checkin
   cost: 1
   target: {fileID: 0}
-  targetTag: CheckIn
-  duration: 5
+  targetTag: 
+  duration: 7
   preConditions:
   - key: AvailableCounters
     value: 1
   afterEffects:
   - key: CheckedIn
-    value: 0
+    value: 1
   agent: {fileID: 0}
   running: 0
 --- !u!114 &8661510032008456117
@@ -199,12 +200,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d56596f3ffea6c439d5935971977249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Action
+  Name: SecurityCheck
   cost: 1
   target: {fileID: 0}
   targetTag: SecurityArea
-  duration: 0
-  preConditions: []
-  afterEffects: []
+  duration: 2
+  preConditions:
+  - key: CheckedIn
+    value: 1
+  afterEffects:
+  - key: PassedSecurity
+    value: 1
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &1473665945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056640580236366832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d9b4650f7612945936af03be7dbdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: WaitAtGate
+  cost: 1
+  target: {fileID: 0}
+  targetTag: Gates
+  duration: 5
+  preConditions:
+  - key: PassedSecurity
+    value: 1
+  afterEffects:
+  - key: ReadyToBoard
+    value: 1
   agent: {fileID: 0}
   running: 0

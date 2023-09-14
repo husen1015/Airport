@@ -6,6 +6,7 @@ public class CheckIn : Action
 {
     public override bool PostPrefom()
     {
+
         //add 1 to available counters
         var ws = GameWorld.Instance.GetWorldStates1().GetStates();
         int availableCounters = ws["AvailableCounters"];
@@ -15,6 +16,9 @@ public class CheckIn : Action
 
     public override bool PrePrefom()
     {
+        //go to an empty check in counter
+        target = CheckinCounters.GetNextAvailableCounter();
+
         //remove one from available counters
         Debug.Log($"checking in, curr available counters: {GameWorld.Instance.GetWorldStates1().GetStates()["AvailableCounters"]}");
         var ws = GameWorld.Instance.GetWorldStates1().GetStates();
