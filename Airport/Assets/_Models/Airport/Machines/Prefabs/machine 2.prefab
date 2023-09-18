@@ -112,7 +112,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 11.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3409222206247420686
@@ -155,7 +155,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7260243631369268608}
-  - component: {fileID: 7515244480931605156}
   m_Layer: 0
   m_Name: Queue-1
   m_TagString: Untagged
@@ -183,25 +182,6 @@ Transform:
   m_Father: {fileID: 8547597237776228683}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7515244480931605156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3874068769313135921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85933a4e1e27fb24288c54ec3d510487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnReachedState: 5
-  DestinationPoints: []
-  ExitPoint:
-    Index: -10
-    isOccupied: 0
-    Self: {fileID: 2636606094701204603}
-    AI: {fileID: 0}
 --- !u!1 &5561807373907465402
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +318,7 @@ GameObject:
   - component: {fileID: 4697520440930479854}
   - component: {fileID: 7409554683886098980}
   - component: {fileID: 915245854253887685}
+  - component: {fileID: 8983974455043777378}
   m_Layer: 0
   m_Name: machine 2
   m_TagString: Untagged
@@ -428,3 +409,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: e8d1d156f23d975418643a4e51f5bece, type: 3}
+--- !u!114 &8983974455043777378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067147695469329393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5a84b5c1833514fb366a5d9c372961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

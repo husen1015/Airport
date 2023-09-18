@@ -164,6 +164,7 @@ MonoBehaviour:
   agent: {fileID: 383758152878937551}
   running: 0
   bench: {fileID: 0}
+  seatId: 0
 --- !u!114 &219786064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 7
+  duration: 1
   preConditions:
   - key: AvailableCounters
     value: 1
@@ -214,6 +215,7 @@ MonoBehaviour:
     value: 1
   agent: {fileID: 0}
   running: 0
+  sc: {fileID: 0}
 --- !u!114 &1473665945
 MonoBehaviour:
   m_ObjectHideFlags: 0
