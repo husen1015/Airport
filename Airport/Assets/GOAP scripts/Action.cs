@@ -59,6 +59,11 @@ public abstract class Action : MonoBehaviour
         //make sure all required conditions are found in pre_conditions
         foreach (KeyValuePair<string, int> p in pre_conditions)
         {
+            //foreach(var condition in conditions)
+            //{
+            //    Debug.Log($"condition = {condition.Key} with value {condition.Value}");
+
+            //}
             if (!conditions.ContainsKey(p.Key) || conditions[p.Key] <= 0) { return false; }
             //if (conditions[p.Key] <= 0) { return false; }
 

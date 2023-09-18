@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class CheckinCounters : MonoBehaviour
 {
-    public static GameObject[] counters;
-    static int nextCounter = 1;
+    public static CheckinCounters instance { get; private set; }
+    public GameObject[] counters;
+    int nextCounter = 0;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +30,13 @@ public class CheckinCounters : MonoBehaviour
     }
 
 
-    public static GameObject GetNextAvailableCounter()
+    public Transform GetNextAvailableCounter()
     {
         if(nextCounter >= counters.Length)
         {
             nextCounter = 0;
         }
-        return counters[nextCounter++];
+        return counters[nextCounter++].transform.GetChild(0);
 
     }
 }

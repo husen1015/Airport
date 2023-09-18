@@ -12,6 +12,10 @@ public class Bench : MonoBehaviour
         seatStats = new bool[3] { true, true, true }; // each bench has 3 seats and they all start free
         seats = new Transform[3]; 
         Transform seatsParent = transform.Find("Seat");
+        if(seatsParent == null)
+        {
+            Debug.Log(this);
+        }
         seats[0] = seatsParent.GetChild(0);
         seats[1] = seatsParent.GetChild(1);
         seats[2] = seatsParent.GetChild(2);

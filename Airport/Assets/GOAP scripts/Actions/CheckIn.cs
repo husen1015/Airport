@@ -17,7 +17,7 @@ public class CheckIn : Action
     public override bool PrePrefom()
     {
         //go to an empty check in counter
-        target = CheckinCounters.GetNextAvailableCounter();
+        target = CheckinCounters.instance.GetNextAvailableCounter().gameObject;
 
         //remove one from available counters
         Debug.Log($"checking in, curr available counters: {GameWorld.Instance.GetWorldStates1().GetStates()["AvailableCounters"]}");
