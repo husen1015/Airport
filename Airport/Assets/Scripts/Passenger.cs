@@ -15,9 +15,9 @@ public class Passenger : GameAgent
 
 
         SubGoals.Add(goal1, 3);
-        SubGoals.Add(goal2, 4);
-        SubGoals.Add(goal3, 6);
-        SubGoals.Add(goal4, 8);
+        //SubGoals.Add(goal2, 4);
+        //SubGoals.Add(goal3, 6);
+        //SubGoals.Add(goal4, 8);
 
         //SubGoal goal1 = new SubGoal("checkin", 3, false);
         //SubGoal goal2 = new SubGoal("passSecurity", 3, false);

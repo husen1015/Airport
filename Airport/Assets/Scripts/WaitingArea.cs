@@ -36,7 +36,7 @@ public class WaitingArea : MonoBehaviour
     {
         foreach (Bench b in benches)
         {
-            if (b.IsFree())
+            if (b.HasFreeSeat())
             {
                 return b;
             }

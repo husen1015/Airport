@@ -2,28 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Bench: MonoBehaviour
+public class Bench : MonoBehaviour
 {
-    bool seatOccupied;
-    Transform restingPoint;
-    // Start is called before the first frame update
+    bool[] seatStats;
+    Transform[] seats;
 
     private void Start()
     {
-        seatOccupied= false;
-        restingPoint = transform.Find("SeatFront");
+        seatStats = new bool[3] { true, true, true }; // each bench has 3 seats and they all start free
+        seats = new Transform[3]; 
+        Transform seatsParent = transform.Find("Seat");
+        seats[0] = seatsParent.GetChild(0);
+        seats[1] = seatsParent.GetChild(1);
+        seats[2] = seatsParent.GetChild(2);
     }
-    public void OccupySeat(bool occupySeat)
+
+
+    public bool HasFreeSeat()
     {
-        seatOccupied = occupySeat;
+        return seatStats[0] || seatStats[1] || seatStats[2];
     }
-    public bool IsFree()
+
+    public (Transform, int) OccupyAvailableSeat()
     {
-        return !seatOccupied;
+        int i = 0;
+        for (; i < 3; i++)
+        {
+            if (seatStats[i])
+            {
+                seatStats[i] = false;
+                break;
+            }
+        }
+        return (seats[i], i);
     }
-    public Transform getRestPoint()
+    public void FreeSeat(int seatId)
     {
-        return restingPoint;
+        seatStats[seatId] = true;
     }
+
 }
