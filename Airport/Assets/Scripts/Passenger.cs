@@ -10,10 +10,16 @@ public class Passenger : GameAgent
     {
         base.Start();
         tiredness = 0;
-        int tired = Passengers.getRandomInt(0, 2);
         //each passenger has 50% chance to be tired in which case it will priorotize resting above checking in
+        int tired = Passengers.getRandomInt(0, 2);
+
+
+        //SubGoal goal1 = new SubGoal("rested", 4, false);
+        //SubGoals.Add(goal1, 4);
+
         SubGoal goal1;
         SubGoal goal2;
+        Debug.Log(tired);
         if (tired == 1)
         {
             tiredness = Passengers.getRandomInt(3, 7);

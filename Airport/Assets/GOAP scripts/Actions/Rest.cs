@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rest : Action
 {
     public Bench bench; //the bench object where this rest action takes place
-    int seatId = 0; //seat id which this action occupies
+    public int seatId = 0; //seat id which this action occupies
     public override bool PostPrefom()
     {
         Debug.Log("rested");
@@ -17,6 +17,7 @@ public class Rest : Action
     {
         //get a free bench and set it as its target
         bench = WaitingArea.instance.GetFreeBench(); // this may return null i.e. no available bench, so in this case assign the default resting place 
+        
         if (bench != null)
         {
             (Transform, int) seatInfo = bench.OccupyAvailableSeat();
