@@ -331,6 +331,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 911830017}
+    - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -447,6 +451,10 @@ PrefabInstance:
       propertyPath: preConditions.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2052992620}
     - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -577,6 +585,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2052992620}
+    - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -646,6 +658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+--- !u!1 &911830017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717853884, guid: 7df6947e434001b4496654705259cb2f, type: 3}
+  m_PrefabInstance: {fileID: 2017479416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1087913326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -661,6 +678,10 @@ PrefabInstance:
       propertyPath: preConditions.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2052992620}
     - target: {fileID: 1473665945, guid: 1817266d92a3d604a888fcc0c4e530ad, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -945,6 +966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 529492232, guid: 7df6947e434001b4496654705259cb2f, type: 3}
+      propertyPath: m_TagString
+      value: Gates
+      objectReference: {fileID: 0}
     - target: {fileID: 604533709, guid: 7df6947e434001b4496654705259cb2f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1077,3 +1102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   benches: []
+--- !u!1 &2052992620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 315097888, guid: 7df6947e434001b4496654705259cb2f, type: 3}
+  m_PrefabInstance: {fileID: 2017479416}
+  m_PrefabAsset: {fileID: 0}
