@@ -21,9 +21,9 @@ public class Passenger : GameAgent
         int tired = Passengers.getRandomInt(0, 2);
 
         Debug.Log(tired);
-
         if (tired == 1)
         {
+            Debug.Log("here");
             tiredness = Passengers.getRandomInt(3, 7);
             WorldState rested = new WorldState("Rested", 1);
             GetComponent<CheckIn>().AddPreCondition(rested);
@@ -35,7 +35,7 @@ public class Passenger : GameAgent
         }
         else
         {
-            goal1 = new SubGoal("rested", 3, false);
+            goal1 = new SubGoal("Rested", 3, false);
             goal2 = new SubGoal("CheckedIn", 4, false);
             SubGoals.Add(goal1, 3);
             SubGoals.Add(goal2, 4);

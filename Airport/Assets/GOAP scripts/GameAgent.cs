@@ -78,7 +78,10 @@ public class GameAgent : MonoBehaviour
     protected void RecalculatePlan()
     {
         planner = null;
-        currAction.running = false; //possibly this needs to be changed in the late update as well
+        if (currAction != null)
+        {
+            currAction.running = false; //possibly this needs to be changed in the late update as well
+        }
         currAction = null;
 
     }
