@@ -19,6 +19,8 @@ public class SecurityCheck : Action
 
     public override bool PrePrefom()
     {
+        //get a security counter and set it as its target
+        sc = SecurityArea.instance.GetFreeCounter(); // this may return null i.e. no available counter, so in this case assign the default transform. TODO: change this so that passenger rests until a place is free
         var lineInfo = sc.admitNewPassenger(this);
         target = lineInfo.Item1.gameObject;
         placeInLine = lineInfo.Item2;
@@ -35,7 +37,7 @@ public class SecurityCheck : Action
     // Update is called once per frame
     void Update()
     {
-        if (!postPreformed)
+        if (target!=null && !postPreformed)
         {
             agent.SetDestination(target.transform.position);
         }

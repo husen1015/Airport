@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,8 +11,8 @@ public abstract class Action : MonoBehaviour
     public GameObject target; //target for the navmesh
     public string targetTag;
     public float duration = 0; //time needed to complete
-    public WorldState[] preConditions;
-    public WorldState[] afterEffects;
+    public List<WorldState> preConditions;
+    public List<WorldState> afterEffects;
     public NavMeshAgent agent;
 
     public Dictionary<string, int> pre_conditions;
@@ -75,5 +76,12 @@ public abstract class Action : MonoBehaviour
     //run after done with the action
     public abstract bool PostPrefom();
 
-
+    public void AddAfterEffect(WorldState ws)
+    {
+        afterEffects.Add(ws);
+    }
+    public void AddPreCondition(WorldState ws)
+    {
+        preConditions.Add(ws);
+    }
 }

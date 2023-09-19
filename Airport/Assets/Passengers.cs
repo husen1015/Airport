@@ -6,9 +6,13 @@ public class Passengers : MonoBehaviour
 {
     static System.Random random;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        
+        random = new System.Random();
+    }
     void Start()
     {
-        random = new System.Random();
     }
 
     // Update is called once per frame

@@ -17,7 +17,6 @@ public class Rest : Action
     {
         //get a free bench and set it as its target
         bench = WaitingArea.instance.GetFreeBench(); // this may return null i.e. no available bench, so in this case assign the default resting place 
-        
         if (bench != null)
         {
             (Transform, int) seatInfo = bench.OccupyAvailableSeat();

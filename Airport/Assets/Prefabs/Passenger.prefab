@@ -159,8 +159,8 @@ MonoBehaviour:
   duration: 2
   preConditions: []
   afterEffects:
-  - key: rested
-    value: 0
+  - key: Rested
+    value: 1
   agent: {fileID: 383758152878937551}
   running: 0
   bench: {fileID: 0}
@@ -216,6 +216,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   running: 0
   sc: {fileID: 0}
+  placeInLine: 0
 --- !u!114 &1473665945
 MonoBehaviour:
   m_ObjectHideFlags: 0
