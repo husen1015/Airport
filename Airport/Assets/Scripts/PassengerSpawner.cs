@@ -5,8 +5,6 @@ using UnityEngine;
 public class PassengerSpawner : MonoBehaviour
 {
     public GameObject passengerPrefab;
-    public GameObject passenger1Prefeab;
-    public GameObject passenger2Prefeab;
     public GameObject[] passengerPrefabs;
     int spawned = 16;
 
@@ -25,7 +23,7 @@ public class PassengerSpawner : MonoBehaviour
     {
         while (spawned > 0)
         {
-            int passengerIndex = Passengers.getRandomInt(0, 5);
+            int passengerIndex = Passengers.getRandomInt(0, 4);
             float spawnInterval = Random.Range(2, 5);
             yield return new WaitForSeconds(spawnInterval);
 

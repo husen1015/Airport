@@ -6,6 +6,7 @@ public class CheckIn : Action
 {
     public override bool PostPrefom()
     {
+        GetComponent<Animator>().SetBool("Walk", true);
 
         //add 1 to available counters
         var ws = GameWorld.Instance.GetWorldStates1().GetStates();
@@ -26,6 +27,11 @@ public class CheckIn : Action
         int availableCounters = ws["AvailableCounters"];
         GameWorld.Instance.GetWorldStates1().SetState("AvailableCounters", availableCounters - 1);
         return true;
+    }
+
+    public override void ActivateAction()
+    {
+        GetComponent<Animator>().SetBool("Walk", false);
     }
 
     // Start is called before the first frame update

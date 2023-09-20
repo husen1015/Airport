@@ -8,6 +8,8 @@ public class Rest : Action
     public int seatId = 0; //seat id which this action occupies
     public override bool PostPrefom()
     {
+        GetComponent<Animator>().SetBool("Walk", true);
+
         Debug.Log("rested");
         bench.FreeSeat(seatId);
         return true;
@@ -27,6 +29,11 @@ public class Rest : Action
 
         Debug.Log("resting");
         return true;
+    }
+
+    public override void ActivateAction()
+    {
+        GetComponent<Animator>().SetBool("Walk", false);
     }
 
     // Start is called before the first frame update

@@ -11,7 +11,8 @@ public class SecurityCheck : Action
 
     public override bool PostPrefom()
     {
-        postPreformed= true;
+        GetComponent<Animator>().SetBool("Walk", true);
+        postPreformed = true;
         sc.AdvanceQueue();
         Debug.Log("post security");
         return true;
@@ -26,6 +27,11 @@ public class SecurityCheck : Action
         placeInLine = lineInfo.Item2;
         duration = lineInfo.Item3;
         return true;
+    }
+
+    public override void ActivateAction()
+    {
+        GetComponent<Animator>().SetBool("Walk", false);
     }
 
     // Start is called before the first frame update

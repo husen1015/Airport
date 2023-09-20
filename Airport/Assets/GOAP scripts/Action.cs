@@ -60,14 +60,22 @@ public abstract class Action : MonoBehaviour
         //make sure all required conditions are found in pre_conditions
         foreach (KeyValuePair<string, int> p in pre_conditions)
         {
-            //foreach(var condition in conditions)
+            //Debug.Log("checking action is achievable given? action name:");
+            //Debug.Log(this.target);
+            //foreach (var condition in conditions)
             //{
             //    Debug.Log($"condition = {condition.Key} with value {condition.Value}");
 
             //}
-            if (!conditions.ContainsKey(p.Key) || conditions[p.Key] <= 0) { return false; }
-            //if (conditions[p.Key] <= 0) { return false; }
+            //Debug.Log("pre conditions");
+            //foreach (var condition in pre_conditions)
+            //{
+            //    Debug.Log($"condition = {condition.Key} with value {condition.Value}");
 
+            //}
+
+            if (!conditions.ContainsKey(p.Key) || conditions[p.Key] <= 0) { return false; }
+            //UnityEditor.EditorApplication.isPaused = true;
         }
         return true;
     }
@@ -76,12 +84,17 @@ public abstract class Action : MonoBehaviour
     //run after done with the action
     public abstract bool PostPrefom();
 
+    //this method runs whenever the game agent reached its destination and spends x time in it (for example resting/talking/...)
+    public abstract void ActivateAction();
+
+
     public void AddAfterEffect(WorldState ws)
     {
         afterEffects.Add(ws);
     }
     public void AddPreCondition(WorldState ws)
     {
-        preConditions.Add(ws);
+        pre_conditions.Add(ws.key, ws.value);
     }
+
 }

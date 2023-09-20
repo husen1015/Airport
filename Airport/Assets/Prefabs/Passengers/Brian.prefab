@@ -1245,7 +1245,7 @@ Animator:
   m_GameObject: {fileID: 4786315435594492309}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fba0d65384ddf8647a5634f7e5cbdad5, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2f7ab8e47391d546b78c8342ea9ba26, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1267,11 +1267,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d9b4650f7612945936af03be7dbdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Action
+  Name: wait at gate
   cost: 1
   target: {fileID: 0}
-  targetTag: 
-  duration: 0
+  targetTag: Gates
+  duration: 5
   preConditions:
   - key: PassedSecurity
     value: 1
@@ -1292,11 +1292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d56596f3ffea6c439d5935971977249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Action
+  Name: security check
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 0
+  duration: 5
   preConditions:
   - key: CheckedIn
     value: 1
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25df8e2f0f8926440b7b4b9659be0bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Action
+  Name: check in
   cost: 1
   target: {fileID: 0}
   targetTag: 
@@ -1344,11 +1344,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04797f50afb5b1d4f993983df670b07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Action
+  Name: rest
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 0
+  duration: 5
   preConditions: []
   afterEffects:
   - key: Rested
@@ -1381,8 +1381,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 0.5
+  m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

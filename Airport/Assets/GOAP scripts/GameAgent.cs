@@ -17,7 +17,7 @@ public class SubGoal
         this.repeat= repeat;
     }
 }
-public class GameAgent : MonoBehaviour
+public abstract class GameAgent : MonoBehaviour
 {
     public List<Action> actions = new List<Action>();
     public Dictionary<SubGoal, int> SubGoals = new Dictionary<SubGoal, int>();
@@ -97,6 +97,7 @@ public class GameAgent : MonoBehaviour
             {
                 if (!invoked)
                 {
+                    currAction.ActivateAction();
                     Invoke("CompleteAction", currAction.duration);
                     invoked = true;
                 }
@@ -112,8 +113,13 @@ public class GameAgent : MonoBehaviour
             planner = new Planner();
             //sort goals according to improtance in a descendign order
             var sortedGoals = from entry in SubGoals orderby entry.Value descending select entry;
+            //foreach(var g in sortedGoals)
+            //{
+            //    Debug.Log($"sorted goal: {g.Key}, {g.Value}");
+            //}
+
             //try to create a plan for a goal sttarting from the most important goal
-            //UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPaused = true;
             foreach (KeyValuePair<SubGoal, int> sortedGoal in sortedGoals)
             {
                 actionsQueue = planner.plan(actions, sortedGoal.Key.SubGoals, null);
@@ -147,6 +153,7 @@ public class GameAgent : MonoBehaviour
             currAction = actionsQueue.Dequeue();    
             if(currAction.PrePrefom()) 
             {
+
                 //if navmesh tag not assigned in inspector assign it with targetTag
                 if(currAction.target == null && currAction.targetTag != "")
                 {
@@ -161,4 +168,5 @@ public class GameAgent : MonoBehaviour
             else { actionsQueue = null; }//this will force us to get a new planner and try again
         }
     }
+    
 }
