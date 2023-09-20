@@ -9,7 +9,6 @@ public class Rest : Action
     public Bench bench; //the bench object where this rest action takes place
     public int seatId = 0; //seat id which this action occupies
 
-    public Transform seatPos;
     public override bool PostPrefom()
     {
         GetComponent<Animator>().SetBool("Sit", false);
@@ -39,12 +38,12 @@ public class Rest : Action
 
     public override void ActivateAction()
     {
-        transform.position = bench.GetSeatLocation(seatId).transform.position;
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
-        seatPos = bench.GetSeatLocation(seatId).transform;
-        transform.rotation = bench.transform.rotation;
         GetComponent<Animator>().SetBool("Walk", false);
         GetComponent<Animator>().SetBool("Sit", true);
+        //transform.position = bench.GetSeatLocation(seatId).transform.position + bench.transform.forward.normalized;
+        transform.position = bench.GetSeatLocation(seatId).transform.position;
+        transform.rotation = bench.transform.rotation;
+
         agent.enabled = false; //disable agent to remove unwanted movement
         //UnityEditor.EditorApplication.isPaused = true;
     }

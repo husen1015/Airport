@@ -93,7 +93,7 @@ public abstract class GameAgent : MonoBehaviour
         {
             float distanceToTarget = Vector3.Distance(currAction.target.transform.position, transform.position);
             
-            if(currAction.agent.hasPath && distanceToTarget < 2f)
+            if(currAction.agent.hasPath && distanceToTarget < .5f)
             {
                 if (!invoked)
                 {

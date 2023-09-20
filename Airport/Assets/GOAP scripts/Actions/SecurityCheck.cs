@@ -31,6 +31,7 @@ public class SecurityCheck : Action
 
     public override void ActivateAction()
     {
+        transform.LookAt(sc.transform.position);
         GetComponent<Animator>().SetBool("Walk", false);
     }
 
@@ -46,6 +47,8 @@ public class SecurityCheck : Action
         if (target!=null && !postPreformed)
         {
             agent.SetDestination(target.transform.position);
+            transform.LookAt(sc.transform.position);
+
         }
     }
 }

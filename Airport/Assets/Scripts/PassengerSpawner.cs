@@ -6,7 +6,7 @@ public class PassengerSpawner : MonoBehaviour
 {
     public GameObject passengerPrefab;
     public GameObject[] passengerPrefabs;
-    int spawned = 16;
+    int spawned = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class PassengerSpawner : MonoBehaviour
         while (spawned > 0)
         {
             int passengerIndex = Passengers.getRandomInt(0, 4);
-            float spawnInterval = Random.Range(2, 5);
+            float spawnInterval = Random.Range(1, 4);
             yield return new WaitForSeconds(spawnInterval);
 
             Instantiate(passengerPrefabs[passengerIndex], transform.position, Quaternion.identity);

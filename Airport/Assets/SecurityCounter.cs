@@ -42,6 +42,7 @@ public class SecurityCounter : MonoBehaviour
             int i = 0;
             foreach (SecurityCheck sc in queueOccupants)
             {
+                
                 //sc.placeInLine--;
                 sc.target = queueTransforms[i].gameObject;
 
