@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Rest : Action
 {
+    NavMeshAgent agent;
     public Bench bench; //the bench object where this rest action takes place
     public int seatId = 0; //seat id which this action occupies
+
+    public Transform seatPos;
     public override bool PostPrefom()
     {
+        GetComponent<Animator>().SetBool("Sit", false);
         GetComponent<Animator>().SetBool("Walk", true);
+
+        agent.enabled = true;
 
         Debug.Log("rested");
         bench.FreeSeat(seatId);
@@ -26,20 +33,27 @@ public class Rest : Action
             seatId = seatInfo.Item2;
         }
 
-
         Debug.Log("resting");
         return true;
     }
 
     public override void ActivateAction()
     {
+        transform.position = bench.GetSeatLocation(seatId).transform.position;
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
+        seatPos = bench.GetSeatLocation(seatId).transform;
+        transform.rotation = bench.transform.rotation;
         GetComponent<Animator>().SetBool("Walk", false);
+        GetComponent<Animator>().SetBool("Sit", true);
+        agent.enabled = false; //disable agent to remove unwanted movement
+        //UnityEditor.EditorApplication.isPaused = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+
     }
 
     // Update is called once per frame

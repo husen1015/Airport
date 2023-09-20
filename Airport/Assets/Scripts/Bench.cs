@@ -44,5 +44,8 @@ public class Bench : MonoBehaviour
     {
         seatStats[seatId] = true;
     }
-
+    public Transform GetSeatLocation(int seatId)
+    {
+        return seats[seatId];
+    }
 }

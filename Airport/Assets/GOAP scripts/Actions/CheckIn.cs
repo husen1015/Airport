@@ -22,7 +22,7 @@ public class CheckIn : Action
         target = CheckinCounters.instance.GetNextAvailableCounter().gameObject;
 
         //remove one from available counters
-        Debug.Log($"checking in, curr available counters: {GameWorld.Instance.GetWorldStates1().GetStates()["AvailableCounters"]}");
+        //Debug.Log($"checking in, curr available counters: {GameWorld.Instance.GetWorldStates1().GetStates()["AvailableCounters"]}");
         var ws = GameWorld.Instance.GetWorldStates1().GetStates();
         int availableCounters = ws["AvailableCounters"];
         GameWorld.Instance.GetWorldStates1().SetState("AvailableCounters", availableCounters - 1);
