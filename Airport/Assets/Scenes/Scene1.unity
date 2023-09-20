@@ -168,6 +168,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 58964810}
     m_Modifications:
+    - target: {fileID: 1396201037, guid: 1df7108e6a01a3649b0d7acfbaefec84, type: 3}
+      propertyPath: preConditions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1396201040, guid: 1df7108e6a01a3649b0d7acfbaefec84, type: 3}
       propertyPath: m_Speed
       value: 2
@@ -238,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813631411848986279, guid: 1df7108e6a01a3649b0d7acfbaefec84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1df7108e6a01a3649b0d7acfbaefec84, type: 3}
@@ -395,6 +399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 58964810}
     m_Modifications:
+    - target: {fileID: -163806481797322529, guid: c2b6077cc3e7b404f93e4cb2e4dc8021, type: 3}
+      propertyPath: preConditions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7237631288879752891, guid: c2b6077cc3e7b404f93e4cb2e4dc8021, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -445,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8014977847558831105, guid: c2b6077cc3e7b404f93e4cb2e4dc8021, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b6077cc3e7b404f93e4cb2e4dc8021, type: 3}
@@ -465,7 +473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &421926965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4786315435594492309, guid: 9fadd66a4267e8548a212c7de006a37d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271384383736279855, guid: 9fadd66a4267e8548a212c7de006a37d, type: 3}
       propertyPath: m_RootOrder
@@ -1089,6 +1097,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5271384383736279855, guid: 9fadd66a4267e8548a212c7de006a37d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740646163602353840, guid: 9fadd66a4267e8548a212c7de006a37d, type: 3}
+      propertyPath: preConditions.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1446,13 +1458,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 58964810}
     m_Modifications:
+    - target: {fileID: 2827489810936660385, guid: 51d00cbdb0740df4c98cad2774ffdab9, type: 3}
+      propertyPath: preConditions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6954003226148023366, guid: 51d00cbdb0740df4c98cad2774ffdab9, type: 3}
       propertyPath: m_Name
       value: Jody
       objectReference: {fileID: 0}
     - target: {fileID: 6954003226148023366, guid: 51d00cbdb0740df4c98cad2774ffdab9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7767097179093169916, guid: 51d00cbdb0740df4c98cad2774ffdab9, type: 3}
       propertyPath: m_RootOrder

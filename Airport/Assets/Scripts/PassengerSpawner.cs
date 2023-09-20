@@ -24,7 +24,7 @@ public class PassengerSpawner : MonoBehaviour
         while (spawned > 0)
         {
             int passengerIndex = Passengers.getRandomInt(0, 4);
-            float spawnInterval = Random.Range(1, 4);
+            float spawnInterval = Random.Range(1, 3);
             yield return new WaitForSeconds(spawnInterval);
 
             Instantiate(passengerPrefabs[passengerIndex], transform.position, Quaternion.identity);
