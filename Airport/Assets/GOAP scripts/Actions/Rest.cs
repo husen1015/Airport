@@ -40,7 +40,9 @@ public class Rest : Action
     {
         GetComponent<Animator>().SetBool("Walk", false);
         GetComponent<Animator>().SetBool("Sit", true);
+
         //transform.position = bench.GetSeatLocation(seatId).transform.position + bench.transform.forward.normalized;
+
         transform.position = bench.GetSeatLocation(seatId).transform.position;
         transform.rotation = bench.transform.rotation;
 
