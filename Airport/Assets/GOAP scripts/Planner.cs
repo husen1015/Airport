@@ -1,10 +1,5 @@
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Collections;
-using UnityEngine;
-using Unity.VisualScripting;
-using UnityEditor.Search;
+
 
 //represents a single node in the graph
 public class Node

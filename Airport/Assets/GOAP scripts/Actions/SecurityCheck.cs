@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
+
 using UnityEngine;
 
 public class SecurityCheck : Action
@@ -47,7 +45,11 @@ public class SecurityCheck : Action
         if (target!=null && !postPreformed)
         {
             agent.SetDestination(target.transform.position);
-            transform.LookAt(sc.transform.position);
+            if(Vector3.Distance(transform.position, target.transform.position ) < 0.1f)
+            {
+                transform.LookAt(sc.transform.position);
+
+            }
 
         }
     }

@@ -2748,7 +2748,6 @@ GameObject:
   - component: {fileID: 1396201039}
   - component: {fileID: 1396201040}
   - component: {fileID: 1396201041}
-  - component: {fileID: 1396201044}
   m_Layer: 0
   m_Name: Adam
   m_TagString: Untagged
@@ -2792,7 +2791,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f2f7ab8e47391d546b78c8342ea9ba26, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -2815,7 +2814,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: Gates
-  duration: 5
+  duration: 0
   preConditions:
   - key: PassedSecurity
     value: 1
@@ -2910,8 +2909,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 8813631411848986279}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 0.5
+  m_Radius: 0.22
+  m_Speed: 2
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2937,20 +2936,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actions: []
   currAction: {fileID: 0}
---- !u!136 &1396201044
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8813631411848986279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8937739
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.92139965, z: 0}
 --- !u!1 &8839319694408574770
 GameObject:
   m_ObjectHideFlags: 0
