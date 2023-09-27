@@ -19,7 +19,7 @@ public class Passenger : GameAgent
         SubGoal goal2;
         //each passenger has 50% chance to be tired in which case it will priorotize resting above checking in
         int tired = Passengers.getRandomInt(0, 2);
-        tired = 1;
+
         if (tired == 1)
         {
             tiredness = Passengers.getRandomInt(3, 7);

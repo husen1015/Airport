@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PassengerSpawner : MonoBehaviour
 {
-    public GameObject passengerPrefab;
     public GameObject[] passengerPrefabs;
-    int spawned = 100;
+    public int spawned;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +27,7 @@ public class PassengerSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
 
             Instantiate(passengerPrefabs[passengerIndex], transform.position, Quaternion.identity);
-
+            Spawner.IncrementPassengerNum(1);
             spawned--;
 
         }

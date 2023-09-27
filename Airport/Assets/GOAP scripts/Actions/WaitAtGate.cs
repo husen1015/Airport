@@ -7,7 +7,7 @@ public class WaitAtGate : Action
     public override bool PostPrefom()
     {
         GetComponent<Animator>().SetBool("Walk", true);
-
+        Spawner.IncrementPassengerNum(-1);  
         Destroy(gameObject);
         return true;
     }

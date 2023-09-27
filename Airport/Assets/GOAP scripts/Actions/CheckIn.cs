@@ -18,6 +18,7 @@ public class CheckIn : Action
 
     public override bool PrePrefom()
     {
+        //StartCoroutine(WaitSecondsEnableAgent(1)); //wait for standing up animation to finish before enabling agent again
         //go to an empty check in counter
         target = CheckinCounters.instance.GetNextAvailableCounter().gameObject;
 
@@ -47,5 +48,6 @@ public class CheckIn : Action
     {
         
     }
+
 
 }

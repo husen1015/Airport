@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -84,7 +85,13 @@ public abstract class Action : MonoBehaviour
 
     //this method runs whenever the game agent reached its destination and spends x time in it (for example resting/talking/...)
     public abstract void ActivateAction();
+    //this method runs whenever the game agent reached its destination and spends x time in it (for example resting/talking/...)
 
+    //this method runs 1 second before the post preform, useful for animation transitions
+    public virtual void PrePostPreform()
+    {
+
+    }
 
     public void AddAfterEffect(WorldState ws)
     {
@@ -94,5 +101,6 @@ public abstract class Action : MonoBehaviour
     {
         pre_conditions.Add(ws.key, ws.value);
     }
+
 
 }
