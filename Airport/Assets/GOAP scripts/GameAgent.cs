@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Collections;
 
 public class SubGoal
 {
@@ -71,6 +72,14 @@ public abstract class GameAgent : MonoBehaviour
         currAction.PostPrefom();
         invoked = false;
     }
+    IEnumerator CompleteActionC(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Debug.Log("completeing action");
+        currAction.running = false;
+        currAction.PostPrefom();
+        invoked = false;
+    }
 
     protected void RecalculatePlan()
     {
@@ -90,12 +99,13 @@ public abstract class GameAgent : MonoBehaviour
         {
             float distanceToTarget = Vector3.Distance(currAction.target.transform.position, transform.position);
             
-            if(currAction.agent.hasPath && distanceToTarget < .5f)
+            if(distanceToTarget < .5f && currAction.agent.hasPath)
             {
                 if (!invoked)
                 {
                     currAction.ActivateAction();
-                    Invoke("CompleteAction", currAction.duration);
+                    //Invoke("CompleteAction", currAction.duration);
+                    StartCoroutine(CompleteActionC((int)currAction.duration));
                     invoked = true;
                 }
             }
@@ -104,18 +114,14 @@ public abstract class GameAgent : MonoBehaviour
 
         //TODO- agent has a plan but a new better plan is currently available
 
-        //agent has no plan
-        if(planner == null || actionsQueue == null)
+        //agent has no plan, happens at the start 
+        else if(planner == null || actionsQueue == null)
         {
+            Debug.Log("calculating plan");
             planner = new Planner();
             //sort goals according to improtance in a descendign order
             var sortedGoals = from entry in SubGoals orderby entry.Value descending select entry;
-            //foreach(var g in sortedGoals)
-            //{
-            //    Debug.Log($"sorted goal: {g.Key}, {g.Value}");
-            //}
 
-            //try to create a plan for a goal sttarting from the most important goal
             //UnityEditor.EditorApplication.isPaused = true;
             foreach (KeyValuePair<SubGoal, int> sortedGoal in sortedGoals)
             {
@@ -123,12 +129,12 @@ public abstract class GameAgent : MonoBehaviour
                 
                 if (actionsQueue != null)
                 {
-                    Debug.Log("ävailable actions: ");
+                    //Debug.Log("ävailable actions: ");
 
-                    foreach (Action a in actionsQueue)
-                    {
-                        Debug.Log(a.Name);
-                    }
+                    //foreach (Action a in actionsQueue)
+                    //{
+                    //    Debug.Log(a.Name);
+                    //}
 
                     currentGoal = sortedGoal.Key;
                     break;
@@ -136,7 +142,7 @@ public abstract class GameAgent : MonoBehaviour
             }
         }
         //completed all actions
-        if(actionsQueue != null && actionsQueue.Count == 0) 
+        else if(actionsQueue != null && actionsQueue.Count == 0) 
         {
             if (!currentGoal.repeat)
             {
@@ -144,8 +150,8 @@ public abstract class GameAgent : MonoBehaviour
             }
             planner = null;
         }
-        //there are still actions to do
-        if(actionsQueue != null && actionsQueue.Count> 0)
+        //completed previous action but there are still actions to do
+        else if(actionsQueue != null && actionsQueue.Count> 0)
         {
             currAction = actionsQueue.Dequeue();    
             if(currAction.PrePrefom()) 

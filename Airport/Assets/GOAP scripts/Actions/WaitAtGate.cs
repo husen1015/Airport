@@ -14,6 +14,7 @@ public class WaitAtGate : Action
 
     public override bool PrePrefom()
     {
+        target = Gates.getGate().gameObject;
         return true;
     }
 

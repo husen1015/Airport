@@ -2813,7 +2813,8 @@ MonoBehaviour:
   Name: wait at gate
   cost: 1
   target: {fileID: 0}
-  targetTag: Gates
+  targetTag: 
+  targetTagObj: {fileID: 0}
   duration: 0
   preConditions:
   - key: PassedSecurity
@@ -2839,6 +2840,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
+  targetTagObj: {fileID: 0}
   duration: 5
   preConditions:
   - key: CheckedIn
@@ -2866,6 +2868,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
+  targetTagObj: {fileID: 0}
   duration: 5
   preConditions:
   - key: AvailableCounters
@@ -2891,6 +2894,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   targetTag: 
+  targetTagObj: {fileID: 0}
   duration: 5
   preConditions: []
   afterEffects:

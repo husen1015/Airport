@@ -52,7 +52,7 @@ public abstract class Action : MonoBehaviour
         if (targetTag != "")
         {
 
-            targetTagObj = GameObject.FindWithTag(targetTag);
+            //targetTagObj = GameObject.FindWithTag(targetTag);
         }
 
     }
