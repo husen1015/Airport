@@ -154,7 +154,8 @@ public abstract class GameAgent : MonoBehaviour
                 //if navmesh tag not assigned in inspector assign it with targetTag
                 if(currAction.target == null && currAction.targetTag != "")
                 {
-                    currAction.target = GameObject.FindWithTag(currAction.targetTag);
+                    //currAction.target = GameObject.FindWithTag(currAction.targetTag);
+                    currAction.target = currAction.targetTagObj;
                 }
                 if(currAction.target != null)
                 {

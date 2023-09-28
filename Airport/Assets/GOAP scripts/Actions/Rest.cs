@@ -25,6 +25,11 @@ public class Rest : Action
 
     public override bool PrePrefom()
     {
+        if (targetTag == "")
+        {
+            Debug.Log($"target tag = {targetTag}");
+            Debug.Log("here");
+        }
         //get a free bench and set it as its target
         bench = WaitingArea.instance.GetFreeBench(); // this may return null i.e. no available bench, so in this case assign the default resting place 
         if (bench != null)
@@ -40,7 +45,10 @@ public class Rest : Action
 
     public override void ActivateAction()
     {
-        agent.enabled = false; //disable agent to remove unwanted movement
+        if (agent != null)
+        {
+            agent.enabled = false; //disable agent to remove unwanted movement
+        }
         transform.position = bench.GetSeatLocation(seatId).transform.position;
         transform.rotation = Quaternion.LookRotation(-bench.transform.forward, Vector3.up);
 

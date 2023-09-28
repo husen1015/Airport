@@ -9,6 +9,7 @@ public abstract class Action : MonoBehaviour
     public float cost = 1f;
     public GameObject target; //target for the navmesh
     public string targetTag;
+    public GameObject targetTagObj;
     public float duration = 0; //time needed to complete
     public List<WorldState> preConditions;
     public List<WorldState> afterEffects;
@@ -29,6 +30,7 @@ public abstract class Action : MonoBehaviour
 
     private void Awake()
     {
+
         agent = GetComponent<NavMeshAgent>();
 
         //populate world states
@@ -46,6 +48,17 @@ public abstract class Action : MonoBehaviour
                 after_effects.Add(worldState.key, worldState.value);
             }
         }
+        //init the target tag object here instead in gameAgent to reduce the number of times FindWithTag is being called for
+        if (targetTag != "")
+        {
+
+            targetTagObj = GameObject.FindWithTag(targetTag);
+        }
+
+    }
+    private void Start()
+    {
+
     }
 
     //currently assuming all actions are achievable. might change later
